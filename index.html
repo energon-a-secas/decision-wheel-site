@@ -8,13 +8,13 @@
   <meta property="og:title" content="Decision Wheel — Customizable Decision Wheel">
   <meta property="og:description" content="Add your own options, icons, and messages. Bookmark and share any wheel configuration.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wheel.neorgon.com/">
+  <meta property="og:url" content="https://decisionwheel.neorgon.com/">
   <meta property="og:site_name" content="Energon">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Decision Wheel — Customizable Decision Wheel">
   <meta name="twitter:description" content="Add your own options, icons, and messages. Bookmark and share any wheel configuration.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wheel.neorgon.com/">
+  <link rel="canonical" href="https://decisionwheel.neorgon.com/">
   <meta name="theme-color" content="#040714">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
@@ -1176,8 +1176,7 @@ function spinToTarget(targetIdx) {
   const segAngle = TAU / N;
   /* Phase needed so pointer (top) lands in centre of targetIdx's segment */
   const targetPhase = (TAU - (targetIdx * segAngle + segAngle / 2) + TAU) % TAU;
-  const currentPhase = ((-currentRotation) % TAU + TAU) % TAU;
-  const deltaToTarget = (targetPhase - currentPhase + TAU) % TAU;
+  const deltaToTarget = (targetPhase - (currentRotation % TAU) + TAU) % TAU;
   const spinAmount = 5 * TAU + deltaToTarget;
   animateSpin(spinAmount);
 }
