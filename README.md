@@ -1,8 +1,36 @@
-# Spin the Wheel
+<div align="center">
+
+# Decision Wheel
+
+Spin a fully customizable decision wheel with your own options, colors, and messages. Share any configuration with a single bookmark link.
+
+[![Live][badge-site]][url-site]
+[![HTML5][badge-html]][url-html]
+[![CSS3][badge-css]][url-css]
+[![JavaScript][badge-js]][url-js]
+[![Claude Code][badge-claude]][url-claude]
+[![License][badge-license]](LICENSE)
+
+[badge-site]:    https://img.shields.io/badge/live_site-0063e5?style=for-the-badge&logo=googlechrome&logoColor=white
+[badge-html]:    https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[badge-css]:     https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[badge-js]:      https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[badge-claude]:  https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white
+[badge-license]: https://img.shields.io/badge/license-MIT-404040?style=for-the-badge
+
+[url-site]:   https://decisionwheel.neorgon.com/
+[url-html]:   #
+[url-css]:    #
+[url-js]:     #
+[url-claude]: https://claude.ai/code
+
+</div>
+
+---
 
 A fully customizable decision wheel. Add your own options, icons, and messages — then save and share your configuration via a bookmark link.
 
-**Live:** [wheel.neorgon.com](https://wheel.neorgon.com/) · runs entirely in the browser, no build step, no backend.
+**Live:** [decisionwheel.neorgon.com](https://decisionwheel.neorgon.com/) · runs entirely in the browser, no build step, no backend.
 
 ---
 
@@ -69,3 +97,9 @@ Or open `index.html` directly — no dependencies, no install.
 ## Tech
 
 Pure HTML + CSS + Canvas API + JavaScript. No external libraries. Wheel rendering uses `CanvasRenderingContext2D` arcs with ease-out quartic animation via `requestAnimationFrame`. Config serialized with `JSON.stringify` → `btoa` → URL hash.
+
+---
+
+<div align="center">
+  <sub>Part of <a href="https://neorgon.com">Neorgon</a></sub>
+</div>
