@@ -1322,7 +1322,7 @@ function buildSegmentRow(seg) {
   deleteBtn.title = 'Remove option';
   deleteBtn.innerHTML = '×';
   deleteBtn.addEventListener('click', () => {
-    if (config.segments.length <= 2) { toast('⚠️ Need at least 2 options'); return; }
+    if (config.segments.length <= 2) { toast('⚠️ The wheel needs at least 2 options'); return; }
     config.segments = config.segments.filter(s => s.id !== seg.id);
     wrap.remove();
     document.getElementById('seg-count').textContent = config.segments.length;
@@ -1419,7 +1419,7 @@ function loadTemplate(name) {
 }
 
 function resetToDefault() {
-  if (!confirm('Reset to default wheel?')) return;
+  if (!confirm('Reset all options to the Blame Game template?')) return;
   config = deepClone(DEFAULT_CONFIG);
   applyConfigToUI();
   saveToStorage();
