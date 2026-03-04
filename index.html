@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decision Wheel — Make Anything a Spin</title>
-  <meta name="description" content="Spin a fully customizable decision wheel with your own options, colors, and messages. Share any configuration with a single bookmark link.">
-  <meta property="og:title" content="Decision Wheel — Make Anything a Spin">
-  <meta property="og:description" content="Fully customizable decision wheel. Set options, colors, messages, and share via URL.">
+  <title>Decision Wheel: Make Anything a Spin</title>
+  <meta name="description" content="Build a custom decision wheel with your options, colors, and messages. Share any setup as a bookmark link">
+  <meta property="og:title" content="Decision Wheel: Make Anything a Spin">
+  <meta property="og:description" content="Custom decision wheel. Pick your options, colors, and messages, then share via URL">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://decisionwheel.neorgon.com/">
   <meta property="og:site_name" content="Neorgon">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Decision Wheel — Make Anything a Spin">
-  <meta name="twitter:description" content="Fully customizable decision wheel. Set options, colors, messages, and share via URL.">
+  <meta name="twitter:title" content="Decision Wheel: Make Anything a Spin">
+  <meta name="twitter:description" content="Custom decision wheel. Pick your options, colors, and messages, then share via URL">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://decisionwheel.neorgon.com/">
   <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
       --border-strong: rgba(255,255,255,.22);
       --text-primary: #f9f9f9;
       --text-secondary: #cacaca;
-      --text-muted: rgba(255,255,255,.45);
+      --text-muted: rgba(255,255,255,.55);
       --accent: #0063e5;
       --accent-bright: #0080ff;
       --danger: #ef4444;
@@ -59,7 +59,7 @@
 
     /* ── Header ─────────────────────────────────────────────────────────── */
     .header-bar {
-      background: linear-gradient(135deg, #B015B0 0%, #3D0080 45%, #080010 100%);
+      background: linear-gradient(in oklch 135deg, #B015B0 0%, #3D0080 50%, #040714 100%);
       border-bottom: 1px solid var(--border-subtle);
       padding: 0 24px;
       height: 68px;
@@ -736,9 +736,22 @@
         transition-duration: 0.01ms !important;
       }
     }
+    :focus-visible {
+      outline: 2px solid var(--accent-bright, #0080ff);
+      outline-offset: 2px;
+    }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px; z-index: 1000;
+      padding: 8px 16px; background: var(--accent-bright, #0080ff); color: #000;
+      font-weight: 600; font-size: .875rem; border-radius: 0 0 6px 6px;
+      text-decoration: none; transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ── Header ──────────────────────────────────────────────────────────────── -->
 <header class="header-bar">
@@ -748,7 +761,7 @@
     </a>
     <div>
       <h1 id="header-title">Decision Wheel</h1>
-      <div class="header-subtitle" id="header-subtitle">Let fate decide</div>
+      <div class="header-subtitle" id="header-subtitle">Spin your choices, pick a winner</div>
     </div>
   </div>
   <button class="btn-settings-header" id="btn-toggle-settings" onclick="toggleSettings()">
@@ -757,13 +770,13 @@
     </svg>
     Settings
   </button>
-  <a class="header-home" href="https://neorgon.com/" title="neorgon.com" target="_blank" rel="noopener noreferrer">
+  <a class="header-home" href="https://neorgon.com/" title="neorgon.com" target="_blank" rel="noopener noreferrer" aria-label="Neorgon home">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
   </a>
 </header>
 
 <!-- ── App body ─────────────────────────────────────────────────────────────── -->
-<div class="app-body">
+<main class="app-body" id="main">
 
   <!-- Wheel stage -->
   <div class="wheel-stage" id="wheel-stage">
@@ -826,7 +839,7 @@
     </div>
   </div>
 
-</div>
+</main>
 
 <!-- ── Result overlay ──────────────────────────────────────────────────────── -->
 <div class="result-overlay" id="result-overlay" onclick="closeResult()">
@@ -950,7 +963,7 @@ function copyShareLink() {
   navigator.clipboard.writeText(url).then(() => {
     toast('🔗 Share link copied!');
   }).catch(() => {
-    toast('⚠️ Could not copy — try manually');
+    toast('⚠️ Copy failed. Select the URL and copy it yourself');
   });
 }
 function loadFromURL() {
@@ -1285,7 +1298,7 @@ function buildSegmentRow(seg) {
   emojiInput.maxLength = 4;
   emojiInput.placeholder = '🎯';
   emojiInput.value = seg.emoji || '';
-  emojiInput.title = 'Emoji or icon';
+  emojiInput.title = 'Emoji for this option';
 
   const textInput = document.createElement('input');
   textInput.className = 'seg-text-input form-input';
@@ -1297,11 +1310,11 @@ function buildSegmentRow(seg) {
   colorInput.className = 'seg-color-input';
   colorInput.type = 'color';
   colorInput.value = seg.color || '#7c3aed';
-  colorInput.title = 'Segment color';
+  colorInput.title = 'Option color';
 
   const msgToggle = document.createElement('button');
   msgToggle.className = 'btn-seg-msg-toggle' + (seg.message ? ' has-msg' : '');
-  msgToggle.title = 'Custom result message';
+  msgToggle.title = 'Set a result message for this option';
   msgToggle.textContent = '💬';
 
   const deleteBtn = document.createElement('button');
@@ -1324,7 +1337,7 @@ function buildSegmentRow(seg) {
   const msgInput = document.createElement('input');
   msgInput.className = 'seg-msg-input';
   msgInput.type = 'text';
-  msgInput.placeholder = 'Message when selected… Use | to separate multiple for variety';
+  msgInput.placeholder = 'Message when selected. Use | to separate alternatives';
   msgInput.value = seg.message || '';
   msgRow.appendChild(msgInput);
 
