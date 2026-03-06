@@ -1,7 +1,7 @@
 'use strict';
 
 import { state } from './state.js';
-import { segmentKey, toast } from './utils.js';
+import { escHtml, segmentKey, toast } from './utils.js';
 import { canvas, spin, spinToTarget, closeResult } from './wheel.js';
 import { toggleSettings } from './settings.js';
 
@@ -12,7 +12,7 @@ function renderHelpShortcuts() {
   state.config.segments.forEach(seg => {
     const row = document.createElement('div');
     row.className = 'help-row';
-    row.innerHTML = `<span>${seg.emoji || ''} ${seg.text}</span><kbd class="help-key">${segmentKey(seg)}</kbd>`;
+    row.innerHTML = `<span>${escHtml(seg.emoji || '')} ${escHtml(seg.text)}</span><kbd class="help-key">${escHtml(segmentKey(seg))}</kbd>`;
     container.appendChild(row);
   });
 }
