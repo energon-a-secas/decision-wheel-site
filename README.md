@@ -82,6 +82,26 @@ Clicking **Copy Share Link** puts this URL on your clipboard. Anyone who opens i
 
 ---
 
+## Architecture
+
+![Architecture](docs/architecture.svg)
+
+```
+dynamic-wheel-game/
+├── index.html    # App shell
+├── css/
+│   └── style.css # All styles
+└── js/
+    ├── app.js    # Entry point
+    ├── state.js  # Config, localStorage, URL hash serialization
+    ├── wheel.js  # Canvas spin physics + winner detection
+    ├── render.js # DOM updates
+    ├── events.js # Spin + settings panel
+    └── utils.js  # Helpers
+```
+
+---
+
 ## Running locally
 
 ```bash
