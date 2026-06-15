@@ -56,13 +56,13 @@
     </a>
   </div>
   <button class="btn-settings-header" id="btn-toggle-settings" onclick="toggleSettings()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
     </svg>
     Settings
   </button>
   <a class="header-home" href="https://neorgon.com/" title="neorgon.com" aria-label="Neorgon home">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
   </a>
 </header>
 
@@ -76,7 +76,7 @@
       <span id="display-title">Spin the Wheel</span>
     </div>
     <div class="wheel-wrapper">
-      <canvas id="wheel-canvas" width="600" height="600"></canvas>
+      <canvas id="wheel-canvas" width="600" height="600" role="img" aria-label="Decision wheel. Use the Spin button below to spin."></canvas>
       <div class="wheel-pointer"></div>
     </div>
     <button class="btn-spin" id="btn-spin" onclick="spin()">SPIN</button>
@@ -87,7 +87,7 @@
     <div class="settings-drawer-inner">
       <div class="settings-header">
         <h2>⚙️ Wheel Settings</h2>
-        <button class="btn-close-settings" onclick="toggleSettings()" title="Close">×</button>
+        <button class="btn-close-settings" onclick="toggleSettings()" title="Close" aria-label="Close settings">×</button>
       </div>
       <div class="settings-body">
 
@@ -112,7 +112,7 @@
           <label>Options <span id="seg-count" style="color:var(--accent-bright);font-weight:700;margin-left:4px"></span></label>
           <div class="segments-list" id="segments-list"></div>
           <button class="btn-ghost" onclick="addSegment()">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             Add Option
           </button>
         </div>
@@ -145,7 +145,7 @@
 </div>
 
 <!-- ── Help button & menu ──────────────────────────────────────────────────── -->
-<button class="help-button" onclick="toggleHelpMenu()" title="Keyboard shortcuts">?</button>
+<button class="help-button" onclick="toggleHelpMenu()" title="Keyboard shortcuts" aria-label="Keyboard shortcuts">?</button>
 <div class="help-menu" id="help-menu">
   <div>
     <h3>Random Spin</h3>

@@ -51,27 +51,32 @@ function buildSegmentRow(seg) {
   emojiInput.placeholder = '🎯';
   emojiInput.value = seg.emoji || '';
   emojiInput.title = 'Emoji for this option';
+  emojiInput.setAttribute('aria-label', 'Emoji for this option');
 
   const textInput = document.createElement('input');
   textInput.className = 'seg-text-input form-input';
   textInput.type = 'text';
   textInput.placeholder = 'Option text';
   textInput.value = seg.text || '';
+  textInput.setAttribute('aria-label', 'Option text');
 
   const colorInput = document.createElement('input');
   colorInput.className = 'seg-color-input';
   colorInput.type = 'color';
   colorInput.value = seg.color || '#7c3aed';
   colorInput.title = 'Option color';
+  colorInput.setAttribute('aria-label', 'Option color');
 
   const msgToggle = document.createElement('button');
   msgToggle.className = 'btn-seg-msg-toggle' + (seg.message ? ' has-msg' : '');
   msgToggle.title = 'Set a result message for this option';
+  msgToggle.setAttribute('aria-label', 'Set a result message for this option');
   msgToggle.textContent = '💬';
 
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'btn-seg-delete';
   deleteBtn.title = 'Remove option';
+  deleteBtn.setAttribute('aria-label', 'Remove option');
   deleteBtn.innerHTML = '×';
   deleteBtn.addEventListener('click', () => {
     if (state.config.segments.length <= 2) { toast('⚠️ The wheel needs at least 2 options'); return; }
