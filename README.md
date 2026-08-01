@@ -87,7 +87,7 @@ Clicking **Copy Share Link** puts this URL on your clipboard. Anyone who opens i
 ![Architecture](docs/architecture.svg)
 
 ```
-dynamic-wheel-game/
+decision-wheel-site/
 ├── index.html    # App shell
 ├── css/
 │   └── style.css # All styles
@@ -105,7 +105,7 @@ dynamic-wheel-game/
 ## Running locally
 
 ```bash
-cd dynamic-wheel-game
+cd decision-wheel-site
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
