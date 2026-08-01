@@ -32,39 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Header ─────────────────────────────────────────────────────────── */
-.header-bar {
-  background: linear-gradient(in oklch 135deg, #B015B0 0%, #3D0080 50%, #040714 100%);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 0 24px;
-  height: 68px;
-  position: sticky;
-  top: 0;
-  z-index: 300;
-  display: flex;
-  align-items: center;
-}
-.header-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.header-logo-img {
-  height: 36px; width: auto; flex-shrink: 0;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s var(--ease-snap);
-  display: block;
-}
-.header-logo-img:hover { transform: scale(1.14) rotate(-9deg); }
-.header-logo h1 { font-size: 1.1em; font-weight: 600; letter-spacing: .5px; }
-.header-subtitle { font-size: .8em; color: rgba(255,255,255,.7); font-weight: 500; margin-top: 2px; }
-.header-home {
-  margin-left: auto;
-  display: flex; align-items: center;
-  padding: 5px;
-  color: rgba(255,255,255,.9); text-decoration: none;
-  border-radius: var(--radius-sm);
-  transition: background var(--dur);
-}
-.header-home:hover { background: rgba(255,255,255,.12); }
-.header-home svg { width: 30px; height: 30px; display: block; }
-
 /* Settings toggle button in header — centered absolutely */
 .btn-settings-header {
   position: absolute;
@@ -737,9 +704,6 @@ button:active, .btn:active {
   text-decoration: none; transition: top .2s;
 }
 .skip-link:focus { top: 0; }
-
-/* ── Template alignment (header title link + footer) ── */
-.header-title-link { text-decoration: none; color: inherit; }
 .info-footer {
   text-align: center;
   padding: 24px 24px 28px;
