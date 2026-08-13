@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://cdn.neorgon.org; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdn.neorgon.org; img-src 'self' data: blob: https://cdn.neorgon.org">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Decision Wheel | Spinner Wheel & Random Picker</title>
   <meta name="description" content="Build a custom decision wheel with your options, colors, and messages. Share any setup as a bookmark link">
@@ -45,6 +44,8 @@
   <link rel="stylesheet" href="css/neorgon-themes.css">
   <link rel="stylesheet" href="https://cdn.neorgon.org/v1.0.0/header/season.css">
   <script defer src="js/neorgon-header.js"></script>
+  <link rel="stylesheet" href="css/neorgon-footer.css">
+  <script defer src="js/neorgon-footer.js"></script>
 </head>
 <body>
 
@@ -187,8 +188,7 @@
 <!-- ── Toast container ─────────────────────────────────────────────────────── -->
 <div id="toast-container"></div>
 
-  <footer class="info-footer">
-    Part of <a class="footer-link" href="https://neorgon.com/">Neorgon</a>
+  <footer class="neo-footer" data-footer-mode="minimal">
   </footer>
 
 <script type="module" src="js/app.js"></script>
