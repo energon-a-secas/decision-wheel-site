@@ -20,11 +20,11 @@ Modular ES module app. `js/app.js` is the entry point; it imports from all other
 
 **Module responsibilities:**
 
-- `js/state.js` — Shared mutable `state` object (`config`, `currentRotation`, `spinning`, `settingsOpen`, `helpOpen`), `TEMPLATES`, `DEFAULT_CONFIG`, `PALETTE`, and all serialization logic (localStorage key: `wheelConfig`).
-- `js/wheel.js` — Canvas rendering (`drawWheel`), spin animation (`spin`, `spinToTarget`), winner calculation (`getWinnerIndex`), and result overlay (`showResult`/`closeResult`).
-- `js/settings.js` — Settings drawer open/close, segment row DOM builder, `applySettings` (persist + update URL hash), `loadTemplate`, `resetToDefault`, `copyShareLink`.
-- `js/events.js` — `bindEvents` wires canvas click, keyboard shortcuts (Space/Enter = spin, letter keys = rigged spin to target, `?` = help menu, `8` = explosion easter egg), and help menu.
-- `js/utils.js` — `escHtml`, `deepClone`, `segmentKey`, `toast`, `spawnConfetti`.
+- `js/state.js`: Shared mutable `state` object (`config`, `currentRotation`, `spinning`, `settingsOpen`, `helpOpen`), `TEMPLATES`, `DEFAULT_CONFIG`, `PALETTE`, and all serialization logic (localStorage key: `wheelConfig`).
+- `js/wheel.js`: Canvas rendering (`drawWheel`), spin animation (`spin`, `spinToTarget`), winner calculation (`getWinnerIndex`), and result overlay (`showResult`/`closeResult`).
+- `js/settings.js`: Settings drawer open/close, segment row DOM builder, `applySettings` (persist + update URL hash), `loadTemplate`, `resetToDefault`, `copyShareLink`.
+- `js/events.js`: `bindEvents` wires canvas click, keyboard shortcuts (Space/Enter = spin, letter keys = rigged spin to target, `?` = help menu, `8` = explosion easter egg), and help menu.
+- `js/utils.js`: `escHtml`, `deepClone`, `segmentKey`, `toast`, `spawnConfetti`.
 
 ## Config serialization
 
@@ -59,7 +59,7 @@ return Math.floor(norm / segAngle) % N;
 
 ## Settings drawer
 
-Toggled by `.closed` CSS class on `#settings-drawer`. Becomes full-screen on mobile. Segment rows are rebuilt from scratch each time the drawer opens (`renderSettingsForm`). Live `input` events on each row update `state.config.segments` and re-draw the canvas immediately — no Apply needed for live preview.
+Toggled by `.closed` CSS class on `#settings-drawer`. Becomes full-screen on mobile. Segment rows are rebuilt from scratch each time the drawer opens (`renderSettingsForm`). Live `input` events on each row update `state.config.segments` and re-draw the canvas immediately. No Apply needed for live preview.
 
 ## Preset templates
 
