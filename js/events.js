@@ -68,6 +68,8 @@ export function closeExplosion() {
 export function bindEvents() {
   /* Canvas click/touch → spin */
   canvas.addEventListener('click', () => spin());
+
+  document.getElementById('btn-toggle-settings').addEventListener('click', () => toggleSettings());
   canvas.style.cursor = 'pointer';
 
   /* Keyboard: Space/Enter = spin, 8 = explosion, letter keys = rig spin */
