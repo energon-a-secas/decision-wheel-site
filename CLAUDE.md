@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 make serve    # Start dev server at http://localhost:8804
 make kill     # Stop the server
 
-# ES modules require a server — file:// will not work
+# ES modules require a server: file:// will not work
 python3 -m http.server 8804
 ```
 
